@@ -40,7 +40,7 @@ NAME    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 eureka  NodePort    10.108.4.212    <none>        8761:30030/TCP   30m
 ```
 
-Eureka UI: you can use `http://<node-ip>:30030` access eureka web page.
+Eureka UI: you can access eureka web page by using `http://<node-ip>:30030`.
 
 ![success](images/eureka.png)
 
