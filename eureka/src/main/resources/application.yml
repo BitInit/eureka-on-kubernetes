@@ -1,0 +1,9 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka
+  profiles:
+    active: ${ENVIRONMENT:dev}
+eureka:
+  environment: ${ENVIRONMENT:dev}
