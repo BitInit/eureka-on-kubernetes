@@ -46,3 +46,7 @@ spec:
             configMapKeyRef:
               name: eureka-address
               key: eureka_service_address
+        - name: ENVIRONMENT
+          value: "prod"
+        - name: JVM_OPTS
+          value: ""
