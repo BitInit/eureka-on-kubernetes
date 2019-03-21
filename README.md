@@ -51,7 +51,7 @@ eureka       ClusterIP   None            <none>        8761/TCP         16m
 eureka-np    NodePort    10.110.154.67   <none>        8761:30030/TCP   16m
 ```
 
-此时，可通过`Eureka UI`查看`Eureka`基本信息，URL为`http://<node-ip>:33030`：
+此时，可通过`Eureka UI`查看`Eureka`基本信息，URL为`http://<node-ip>:30030`：
 
 ![success](images/eureka.png)
 
