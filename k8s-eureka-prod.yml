@@ -3,14 +3,14 @@ kind: ConfigMap
 metadata:
   name: eureka-cm
 data:
-  # if you want to deploy (n + 1) instances of eureka cluster, 
-  # you should set eureka_service_address: http://eureka-0.eureka:8761/eureka,...,http://eureka-n.eureka:8761/eureka
+  # if you want to deploy n instances of eureka cluster, 
+  # you should set eureka_service_address: http://eureka-0.eureka:8761/eureka,...,http://eureka-(n-1).eureka:8761/eureka
   eureka_service_address: http://eureka-0.eureka:8761/eureka,http://eureka-1.eureka:8761/eureka,http://eureka-2.eureka:8761/eureka
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: eureka
+  name: eureka-np
   labels:
     app: eureka
 spec:
@@ -22,13 +22,27 @@ spec:
   selector:
     app: eureka
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eureka
+  labels:
+    app: eureka
+spec:
+  clusterIP: None
+  ports:
+  - port: 8761
+    name: eureka
+  selector:
+    app: eureka
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: eureka
 spec:
   serviceName: 'eureka'
-  # (n + 1) instances
+  # n instances
   replicas: 3
   selector:
     matchLabels:
