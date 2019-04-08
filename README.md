@@ -84,7 +84,7 @@ eureka:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:eureka:8761/eureka,http://eureka-1.eureka.default.svc.cluster.local:eureka:8761/eureka,http://eureka-2.eureka.default.svc.cluster.local:eureka:8761/eureka
+      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka,http://eureka-1.eureka.default.svc.cluster.local:8761/eureka,http://eureka-2.eureka.default.svc.cluster.local:8761/eureka
 ```
 
 #### 第三种方式
