@@ -74,7 +74,7 @@ env:
 eureka:
   client:
     serviceUrl:
-      defaultZone: $EUREKA_SERVER_ADDRESS
+      defaultZone: ${EUREKA_SERVER_ADDRESS}
 ```
 
 #### 第二种方式
